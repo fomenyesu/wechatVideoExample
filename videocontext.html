@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="videocontext.js?v=3"></script>
+    <script type="text/javascript" src="browser-polyfill.min.js"></script>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+
+    <script type="text/javascript">
+        window.onload = function(){
+            var canvas = document.getElementById("canvas");
+
+            var videoCtx = new VideoContext(canvas);
+            var videoNode1 = videoCtx.createVideoSourceNode("./2016093017040424039.mp4");
+            videoNode1.start(0);
+            videoNode1.stop(30);
+
+            // var videoNode2 = videoCtx.createVideoSourceNode("./video2.mp4");
+            // videoNode2.start(2);
+            // videoNode2.stop(6);
+
+            var crossFade = videoCtx.createTransitionNode(VideoContext.DEFINITIONS.CROSSFADE);
+            crossFade.transition(2,4,0.0,1.0, "mix");
+
+            // videoNode2.connect(crossFade);
+            videoNode1.connect(crossFade);
+            crossFade.connect(videoCtx.destination);
+
+
+            videoCtx.play();
+        };
+    </script>
+</body>
+</html>

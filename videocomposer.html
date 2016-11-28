@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head></head>
+<body>
+    <script type="text/javascript" src="videocompositor.es5.js"></script>
+    <script type="text/javascript">
+        window.onload = function () {
+            var canvas = document.getElementById('player-canvas');
+            var videoCompositor = new VideoCompositor(canvas);
+
+            videoCompositor.playlist = {
+                "tracks":[
+                    [{type:"video", sourceStart:0, start:0, duration:5, src:"2016093017040424039.mp4", id:"1"}]
+                ]
+            };
+
+            videoCompositor.play();
+        };
+    </script>
+    <canvas id="player-canvas"></canvas>
+</body>
+</html>

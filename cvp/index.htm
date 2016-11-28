@@ -1,0 +1,387 @@
+<!--http://bmw2.thefront.com.cn/m2_2016/-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="gb2312" >
+	<meta name="viewport" content="user-scalable=no, width=640">
+	<title>罗杰斯邀请你视频聊天</title>
+	<script>
+		var _hmt = _hmt || [];
+		(function() {
+			var hm = document.createElement("script");
+			hm.src = "//hm.baidu.com/hm.js?6d71b8c5119ff39e20d3a11d779644a2";
+			var s = document.getElementsByTagName("script")[0];
+			s.parentNode.insertBefore(hm, s);
+		})();
+	</script>
+	<!--<link rel="stylesheet" href="demo.css" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/demo/demo.css">-->
+	<link rel="stylesheet" href="http://gz.house.qq.com/fc/706lgs/demo.css" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/demo/demo.css">
+	<!--<script>
+        var ua = navigator.userAgent.toLowerCase();
+        if(ua.indexOf('iphone')==-1 && ua.indexOf('android')==-1){
+            location.href = 'pc.html'/*tpa=http://bmw2.thefront.com.cn/m2_2016/pc.html*/;
+        }
+    </script>-->
+	<style>
+		.wrap{
+			position: absolute;
+			top:20%;
+			left: 0;
+			width: 100%;
+			height: 200px;
+		}
+		.wrap .container .page-item2 .mincon {
+			padding: 3rem 3rem 0 3rem;
+			font-size: .5rem;
+		}
+		body{
+			background: #000;
+		}
+		input{
+			text-align: center;
+			-webkit-box-shadow:none!important;
+			-moz-box-shadow: none!important;
+			box-shadow: none!important;
+			background-color:transparent!important;
+			border:  1px solid #000!important;
+			border-radius: 0px!important;
+			margin-top: 2px;
+			color: #fff;
+		}
+		.controls{
+			margin-top: .5rem;
+		height: 1rem;
+		}
+		.huiyan-form .control-group{
+			margin-bottom: 3.3rem!important;
+		}
+		.huiyan-form select, .huiyan-form textarea, .huiyan-form input[type="text"] {
+			color: #000;
+		}
+		.botCon{position:absolute;left:0;bottom:0;width:640px;height:1046px;}
+		.bot{left:78px;top:660px;    position: absolute;}
+		.name{left:225px;top:47px;}
+		.bottab{left:0;top:974px;}
+		.obj1{left:74px;top:324px;opacity:0;}
+		.phone{position:absolute;width:640px;text-align:center;left:0;top:143px;-webkit-transform:translate3d(0,0,0);color:#ffffff;pointer-events:none;}
+		#startBtn{position:absolute;width:124px;height:124px;left:417px;top:831px;background:url("http://mat1.gtimg.com/house_guangzhou/fc/706lgs/nstartBtn2.png")/*tpa=http://res.my.netease.com/qt/2016/0318_lgx/images/nstartBtn2.png*/ no-repeat;background-size:100%;-webkit-transform:translate3d(0,0,0);-webkit-animation:rtAni3 0.8s ease-out infinite;}
+		#endBtn{position:absolute;width:124px;height:124px;left:99px;top:831px;background:url("http://mat1.gtimg.com/house_guangzhou/fc/706lgs/endBtn.png")/*tpa=http://res.my.netease.com/qt/2016/0318_lgx/images/endBtn.png*/ no-repeat;background-size:100%;-webkit-transform:translate3d(0,0,0);}
+		@-webkit-keyframes rtAni3{
+			0%{
+				-webkit-transform:rotate(0deg) translate3d(0,0,0);
+			}
+			15%{
+				-webkit-transform:rotate(20deg) translate3d(0,0,0);
+			}
+			30%{
+				-webkit-transform:rotate(-10deg) translate3d(0,0,0);
+			}
+			45%{
+				-webkit-transform:rotate(20deg) translate3d(0,0,0);
+			}
+			60%{
+				-webkit-transform:rotate(0deg) translate3d(0,0,0);
+			}
+		}
+		/*弹出框*/
+		  .fadeIn {
+			-webkit-animation-name: scaleIn;
+			animation-name: scaleIn;
+			-webkit-animation-duration: 0.4s;
+			animation-duration: 0.4s;
+			-webkit-animation-fill-mode: both;
+			animation-fill-mode: both;
+		}
+		 .mask {
+			 font-family: "Microsoft YaHei","Helvetica Neue",Helvetica,STHeiTi,sans-serif;
+			position: absolute;
+			width: 100%;
+			height: 96%;
+			left: 0;
+			top: 0;
+			background-color: rgba(0, 0, 0, 0.3);
+			display: none;
+			 z-index:45;
+			 overflow:hidden;
+			 /*background:url(http://mat1.gtimg.com/house_guangzhou/fc/706lgs/over.jpg)!*tpa=http://bmw2.static.thefront.com.cn/2016/m2_2016/img/over.jpg*! no-repeat;*/
+		}
+		 .mask .warning-dialog {
+			 position: absolute;
+			 width: 5rem;
+			 height: 1.8rem;
+			 background-color: #fff;
+			 border-radius: 0.33333rem;
+			 left: 50%;
+			 top: 50%;
+			 margin-left: -2.5rem;
+			 margin-top: -1rem;
+			 border: 1px solid #ccc;
+			 font-weight: bold;
+		}
+		h3 {
+			display: block;
+			font-size: 1.17em;
+			-webkit-margin-before: 1em;
+			-webkit-margin-after: 1em;
+			-webkit-margin-start: 0px;
+			-webkit-margin-end: 0px;
+			font-weight: bold;
+		}
+		 .mask .warning-dialog h3 {
+			 font-size: 0.4rem;
+			 line-height: 0.2rem;
+			 font-weight: bold;
+			 text-align: center;
+		}
+		.clearfix:before, .clearfix:after {
+			content: " ";
+			display: table;
+		}
+		.mask .warning-dialog .btns a:first-child {
+			border-right: 1px solid #cacaca;
+		}
+		 .mask .warning-dialog .btns a {
+			display: block;
+			box-sizing: border-box;
+			width: 50%;
+			font-size: 0.4rem;
+			line-height: 1.13333rem;
+			color: #0476f6;
+			float: left;
+			text-align: center;
+			border-top: 1px solid #cacaca;
+		}
+		.no_highlight, a, input, select {
+			-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+		}
+		a {
+			text-decoration: none;
+		}
+		 .mask .warning-dialog .btns a {
+			display: block;
+			box-sizing: border-box;
+			width: 50%;
+			font-size: 0.45333rem;
+			line-height: 0.8rem;
+			color: #0476f6;
+			float: left;
+			text-align: center;
+			border-top: 1px solid #cacaca;
+		}
+		@keyframes scaleIn {
+			0% {
+				opacity: 0;
+				-webkit-transform: scale3d(1.05, 1.05, 1);
+				transform: scale3d(1.05, 1.05, 1);
+				-webkit-animation-timing-function: cubic-bezier(0.3, 1, 1, 1);
+				animation-timing-function: cubic-bezier(0.3, 1, 1, 1); }
+			100% {
+				opacity: 1;
+				-webkit-transform: scale3d(1, 1, 1);
+				transform: scale3d(1, 1, 1);
+				-webkit-animation-timing-function: cubic-bezier(0.3, 1, 1, 1);
+				animation-timing-function: cubic-bezier(0.3, 1, 1, 1); } }
+	</style>
+</head>
+<body>
+<div id="loading">
+	<div id="load1"></div>
+	<div id="load2"></div>
+	<div id="load3"></div>
+	<div id="load4"></div>
+	<div id="load5"></div>
+</div>
+<div id="masker">
+	<audio id="myaudio" src="http://mat1.gtimg.com/house_guangzhou/fc/706lgs/wxl.mp3"  autoplay loop hidden="true" style="width:0;height:0" ></audio>
+	<div class="botCon">
+		<img src="http://mat1.gtimg.com/house_guangzhou/fc/706lgs/bot.png" data-pic="bot.png" class="preload ipic bot">
+		<div id="startBtn" class="btn" data-ob="124"></div>
+		<div id="endBtn" class="btn" data-ob="124"></div>
+	</div>
+</div>
+
+<div class="video-wrapper js-video-wrapper">
+	<div style="position:absolute;background: url(http://mat1.gtimg.com/house_guangzhou/fc/706lgs/bg3.png)no-repeat;background-size: 100%;z-index: 44;top: 0;left: 0;width: 100%;height: 100%"></div>
+	<div class="video-responsive" style="z-index: 43">
+		<video class="video js-video" webkit-playsinline muted>
+			<source src="http://mat1.gtimg.com/house_guangzhou/fc/706lgs/bm/final52.mp4" type="video/mp4">
+		</video>
+		<canvas class="canvas js-canvas"></canvas>
+		<div class="video-timeline js-timeline">
+			<div class="video-timeline-passed js-timeline-passed">
+			</div>
+		</div>
+	</div>
+</div>
+<div id="links" class="mask fadeIn">
+	<div class="warning-dialog">
+		<h3>来自罗杰斯的邀请</h3>
+		<div class="btns clearfix">
+			<a href="http://gz.house.qq.com/fc/706lgs/bm/bm.htm" class="next js-muted">打开</a>
+			<a href="http://gz.house.qq.com/fc/706lgs/bm/bm.htm" class="next js-muted">前往</a>
+		</div>
+	</div>
+</div>
+<script type="text/javascript" src="http://mat1.gtimg.com/tech/css/huiyan/jquery.min.js"></script>
+<script src="http://gz.house.qq.com/fc/706lgs/autoChange.js"></script>
+<script src="http://gz.house.qq.com/fc/706lgs/hammer.min.js" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/js/hammer.min.js"></script>
+<script src="http://gz.house.qq.com/fc/706lgs/jquery.hammer.js" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/js/jquery.hammer.js"></script>
+<script src="http://gz.house.qq.com/fc/706lgs/jquery.transit.min.js" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/js/jquery.transit.min.js"></script>
+<script src="http://gz.house.qq.com/fc/706lgs/canvas-video-player.js" tppabs="http://bmw2.static.thefront.com.cn/2016/m2_2016/js/canvas-video-player.js"></script>
+
+<script>
+	$(document).ready(function () {
+		$("#myaudio")[0].play();
+	});
+	var isIphone = navigator.userAgent.toLowerCase().indexOf('iphone') >= 0;
+	var ld=vd=0;
+	playOver();
+	if(isIphone) {
+		var canvasVideo = new CanvasVideoPlayer({
+			videoSelector: '.js-video',
+			canvasSelector: '.js-canvas',
+			hideVideo: true,
+			audio: true,
+		});
+	}else {
+		vd = 1;
+		$('canvas').hide();
+		$('.video').remove();
+		$('.video-responsive').append('<video src="http://mat1.gtimg.com/house_guangzhou/fc/706lgs/bm/final52.mp4" id="video" width="0" height="0" style="background:transparent;"></video>');
+		$('#video').get(0).load();
+		// $('#video').get(0).play();
+		$('#video').get(0).addEventListener('canplaythrough',function(){
+		});
+		$('#video').on('ended',function(){
+			showBtn();
+			$('#video').remove();
+		});
+	}
+
+	function playOver(){
+		ld=1;
+		$('#load1,#load2,#load3,#load4,#load5').transition({'opacity':1,delay:0},0);
+		$('#loading').hide();
+		/*$('#load2').transition({'opacity':1,delay:0},0)
+		$('#load3').transition({'opacity':1,delay:0},0)
+		$('#load4').transition({'opacity':1,delay:0},function(){
+			ld=1
+			if(vd==0){
+				$('#load5').transition({'opacity':1,delay:0},function(){
+					$('#loading').hide();
+				})
+			}
+		});*/
+	}
+	// function playOver(){
+	// 	// $('#btn').show();
+	// }
+	function showBtn(){
+		$('#links').show();
+	}
+	$('#startBtn').hammer().on('panup',function(e){
+		$("#myaudio")[0].pause();
+		//上滑
+		var y = e.gesture.distance;
+		// console.log(y)
+		if(y>180){
+			y = 180;
+		}
+		$('#masker').css({y:-y});
+	});
+	$('#startBtn').on('touchend',function(){
+		$("#myaudio")[0].pause();
+		$('#masker').transition({y:0},300,function(){
+			$('#masker').fadeOut();
+
+		});
+		if(canvasVideo){
+			canvasVideo.play();
+		}else{
+			$('#video').width(640).height(1040).get(0).play();
+		}
+	});
+
+	$('#link a').on('touchend',function(){
+		var href = $(this).data('href');
+		location.href = href;
+	});
+	// $('#loading').on('touchend',function(){
+	// 	location.reload(true);
+	// })
+	document.addEventListener('touchmove',function(e){
+		e.preventDefault();
+	});
+</script>
+<script>
+	//微信分享标题
+	var shareTitle = '罗杰斯邀请你视频聊天';
+
+	//微信分享简介
+	var descContent = '该新闻已被腾讯房产快速删除';
+
+	//朋友圈转发标题
+	var shareTimeLineTitle = '该新闻已被腾讯房产快速删除';
+
+	//分享小图(100x100)
+	var imgUrl = 'http://mat1.gtimg.com/house_guangzhou/fc/706lgs/share.png'/*tpa=http://mat1.gtimg.com/gd/2015/invitation/sharelogo.jpg*/;
+
+	//分享地址(默认为当前地址)
+	var lineLink = window.location.href;
+
+	var appid = '';
+
+	function shareFriend() {
+		WeixinJSBridge.invoke('sendAppMessage',{
+			"appid": appid,
+			"img_url": imgUrl,
+			"img_width": "120",
+			"img_height": "120",
+			"link": lineLink,
+			"desc": descContent,
+			"title": shareTitle
+		}, function(res) {
+			_report('send_msg', res.err_msg);
+		})
+	}
+	function shareTimeline() {
+		WeixinJSBridge.invoke('shareTimeline',{
+			"img_url": imgUrl,
+			"img_width": "120",
+			"img_height": "120",
+			"link": lineLink,
+			"desc": descContent,
+			"title": shareTimeLineTitle
+		}, function(res) {
+			_report('timeline', res.err_msg);
+		});
+	}
+	function shareWeibo() {
+		WeixinJSBridge.invoke('shareWeibo',{
+			"content": descContent,
+			"url": lineLink
+		}, function(res) {
+			_report('weibo', res.err_msg);
+		});
+	}
+
+	document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+
+		// 发送给好友
+		WeixinJSBridge.on('menu:share:appmessage', function(argv){
+			shareFriend();
+		});
+
+		// 分享到朋友圈
+		WeixinJSBridge.on('menu:share:timeline', function(argv){
+			shareTimeline();
+		});
+
+		// 分享到微博
+		WeixinJSBridge.on('menu:share:weibo', function(argv){
+			shareWeibo();
+		});
+	}, false);
+</script>
+</body>
+</html>
