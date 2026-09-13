@@ -1,3 +1,5 @@
+
+
 # wechat-video-example
 微信播放视频的测试源码：
 由于微信使用X5浏览器，在使用video标签播放视频的时候出现各种奇葩问题。本源码是在解决这个问题的过程中所做的尝试性源码。
@@ -7,6 +9,7 @@
 ###使用简介
 下载后，在主机新建目录，把源代码全部拷贝到这个目录里。
 用微信浏览器访问里面的html页面即可测试。
+例如，`convasplayer/index.html` 是 canvas 播放视频的测试用例页面。
 
 # 视频播放--踩坑小计
 
@@ -76,7 +79,6 @@ Safari （10后）不自动播放：
 
 
 
-
 ![vuedec43e2b4cda0efe595430015154e1fd2.png | center | 592x270](https://user-gold-cdn.xitu.io/2018/6/7/163d80e17cb2018b?w=578&h=264&f=png&s=234485 "")
 
 
@@ -122,17 +124,17 @@ if (promise !== undefined) {
 
 ```javascript
 document.addEventListener(
-  'WeixinJSBridgeReady',
-  function() {
-    video.play();
-  },
-  false
+  'WeixinJSBridgeReady',
+  function() {
+   video.play();
+  },
+  false
 );
 ```
 
 ## 场景二：全屏处理
 
-在移动端浏览器，  video 在用户点击播放或者通过API video.play() 触发播放时，会强制以全屏置顶的形式进行播放，设计的初衷可能是因为全屏能提供更好的用户体验，但有时候开发者希望能自己控制是否全屏从而实现其他需求。
+在移动端浏览器，  video 在用户点击播放或者通过API video.play() 触发播放时，会强制以全屏置顶的形式进行播放，设计的初衷可能是因为全屏能提供更好的用户体验，但有时候开发者希望能自己控制是否全屏从而实现其他需求。
 
 ### playsinline 取消全屏
 如果想实现不全屏播放，只需在video标签加个 __playsinline__  属性即可，这个属性在__基于webkit内核的移动端浏览器__基本没问题，实在不行就再加个 __webkit-playsinline__ ：
@@ -254,4 +256,3 @@ __点击播放：__
 > 对我们团队感兴趣的可以关注专栏，关注[github](https://github.com/ProtoTeam/blog)或者发送简历至'tao.qit####[alibaba-inc.com](http://alibaba-inc.com)'.replace('####', '@')，欢迎有志之士加入~
 
 原文地址：[https://github.com/ProtoTeam/blog/blob/master/201806/1.md](https://github.com/ProtoTeam/blog/blob/master/201806/1.md)
-
